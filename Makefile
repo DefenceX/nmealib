@@ -33,7 +33,8 @@ remake: clean all
 
 lib/$(LIBNAME): $(OBJ)
 	@echo "[LD] $@"
-	@$(CC) -shared -Wl,-soname=$(LIBNAME) -o lib/$(LIBNAME) $(OBJ) 
+	#@$(CC) -shared -Wl,-soname=$(LIBNAME) -o lib/$(LIBNAME) $(OBJ) 
+	@$(CC) -static -o lib/libnema.a $(OBJ)
 
 build/%.o: src/%.c Makefile Makefile.inc
 	@echo "[CC] $<"
