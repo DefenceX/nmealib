@@ -18,9 +18,9 @@ set(SOURCES
     ./src/util.c
 )
 
-add_library(libnmea STATIC ${SOURCES})
-target_include_directories(libnmea PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_library(nmea STATIC ${SOURCES})
+target_include_directories(nmea PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_link_libraries(libnmea m)
+target_link_libraries(nmea m)
 
-install(TARGETS libnmea DESTINATION lib)
+install(TARGETS nmea DESTINATION lib)
