@@ -64,7 +64,7 @@ install: all
 	@mkdir -v -p $(DESTDIR)/$(LIBDIR) $(DESTDIR)/$(INCLUDEDIR)
 	cp lib/$(LIBNAME) $(DESTDIR)/$(LIBDIR)/$(LIBNAME).$(VERSION)
 	$(STRIP) $(DESTDIR)/$(LIBDIR)/$(LIBNAME).$(VERSION)
-	ldconfig -n $(DESTDIR)/$(LIBDIR)
+	#ldconfig -n $(DESTDIR)/$(LIBDIR)
 	@rm -fr $(DESTDIR)/$(INCLUDEDIR)/nmea
 	cp -r include/nmea $(DESTDIR)/$(INCLUDEDIR)
 
