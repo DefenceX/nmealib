@@ -1,5 +1,5 @@
 
-project(libnmea C)
+project(nmea C)
 
 cmake_minimum_required(VERSION 3.18)
 set(CFLAGS "CCFLAGS = -Wall -fPIC -D_POSIX_C_SOURCE")
