@@ -21,7 +21,7 @@ OBJ = $(MODULES:%=build/%.o)
 
 LIBS = -lm
 INCS = -I ./include
-
+CCFLAGS = -Wall -fPIC
 
 #
 # Targets
