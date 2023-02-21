@@ -21,7 +21,7 @@ OBJ = $(MODULES:%=build/%.o)
 
 LIBS = -lm
 INCS = -I ./include
-CCFLAGS = -Wall -fPIC
+CCFLAGS = -Wall -fPIC -D_POSIX_C_SOURCE
 
 #
 # Targets
@@ -33,7 +33,7 @@ remake: clean all
 
 lib/$(LIBNAME): $(OBJ)
 	@echo "[LD] $@"
-	@$(CC) -shared -Wl,-soname=$(LIBNAME) -o lib/$(LIBNAME) $(OBJ) -lc
+	@$(CC) -shared -Wl,-soname=$(LIBNAME) -o lib/$(LIBNAME) $(OBJ) 
 
 build/%.o: src/%.c Makefile Makefile.inc
 	@echo "[CC] $<"
