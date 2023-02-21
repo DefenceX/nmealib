@@ -18,6 +18,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#define _POSIX_C_SOURCE 200112L
 #include <nmea/time.h>
 
 #include <stddef.h>
@@ -29,7 +30,7 @@ void nmea_time_now(nmeaTIME *stm) {
 	struct tm tt;
 
 	gettimeofday(&tp, NULL);
-	gmtime_r(&tp.tv_sec, &tt);
+	gmtime_r((const time_t *)&tp.tv_sec, &tt);
 
 	stm->year = tt.tm_year;
 	stm->mon = tt.tm_mon;
