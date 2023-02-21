@@ -21,6 +21,6 @@ set(SOURCES
 add_library(libnmea STATIC ${SOURCES})
 target_include_directories(libnmea PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-Target_link_libraries(libnmea m)
+target_link_libraries(libnmea m)
 
 install(TARGETS libnmea DESTINATION lib)
