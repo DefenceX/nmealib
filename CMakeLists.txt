@@ -2,7 +2,7 @@
 project(nmea C)
 
 cmake_minimum_required(VERSION 3.18)
-set(CFLAGS "CCFLAGS = -Wall -fPIC -D_POSIX_C_SOURCE")
+set(CMAKE_C_FLAGS "-Wall -fPIC -D_POSIX_C_SOURCE")
 
 set(SOURCES
     ./src/context.c
@@ -24,3 +24,4 @@ target_include_directories(nmea PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(nmea m)
 
 install(TARGETS nmea DESTINATION lib)
+
