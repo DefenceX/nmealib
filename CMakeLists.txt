@@ -21,7 +21,7 @@ set(SOURCES
 add_library(nmea STATIC ${SOURCES})
 target_include_directories(nmea PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_link_libraries(nmea m)
+target_link_libraries(nmea m stdc++)
 
 install(TARGETS nmea DESTINATION lib)
 
