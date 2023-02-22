@@ -239,7 +239,7 @@ int nmea_move_horz(
     end_pos->lon = p1.lon + atan2(
         sin(azimuth) * sin(distance) * cos(p1.lat), cos(distance) - sin(p1.lat) * sin(end_pos->lat));
 
-    if(_isnan(end_pos->lat) || _isnan(end_pos->lon))
+    if(__isnan(end_pos->lat) || __isnan(end_pos->lon))
     {
         end_pos->lat = 0; end_pos->lon = 0;
         RetVal = 0;
@@ -278,7 +278,7 @@ int nmea_move_horz_ellipsoid(
     { /* No move */
         *end_pos = *start_pos;
         if ( end_azimuth != 0 ) *end_azimuth = azimuth;
-        return ! (_isnan(end_pos->lat) || _isnan(end_pos->lon));
+        return ! (__isnan(end_pos->lat) || __isnan(end_pos->lon));
     } /* No move */
 
     /* Earth geometry */
@@ -357,7 +357,7 @@ int nmea_move_horz_ellipsoid(
             sin_alpha, -sin_U1 * sin_sigma + cos_U1 * cos_sigma * cos_alpha1
             );
     }
-    return ! (_isnan(end_pos->lat) || _isnan(end_pos->lon));
+    return ! (__isnan(end_pos->lat) || __isnan(end_pos->lon));
 }
 
 /**
